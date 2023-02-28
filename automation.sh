@@ -7,7 +7,7 @@ name='Meghna'
 s3_bucket="upgrad-meghna"
 sudo tar czf /tmp/${name}-httpd-logs-${timestamp}.tar.gz /var/log/apache2/*.log 
 aws s3 cp /tmp/${name}-httpd-logs-${timestamp}.tar.gz s3://${s3_bucket}/${name}-httpd-logs-${timestamp}.tar.gz
-
+#Task 2
 if [ ! -f /var/www/html/inventory.html ] ;
 then
         sudo touch /var/www/html/inventory.html
@@ -23,7 +23,7 @@ sudo echo "$logtype	$timecreated	$filetype	$size" >> /var/www/html/inventory.htm
 
 sudo rm -rf /tmp/*.tar.gz
 
-
+#Task 3
 if [ ! -f /etc/cron.d/automation ] ;
 then
 	sudo touch /etc/cron.d/automation
